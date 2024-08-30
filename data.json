@@ -1,8 +1,6 @@
 [
   {
-    "file": "experiments/example.js",
-    "name": "Circles",
-    "description": "I chose to create an art piece inspired by the artist Tyler Hobbs. The ides a was to create different circles in different layers in different sizes."
+    "file": "experiments/example.js"
   },
 
 
@@ -17,16 +15,16 @@
 
   {
     "file": "experiments/circles2.js",
-    "name": "Circles",
-    "description": "I chose to create an art piece inspired by the artist Tyler Hobbs. The ides a was to create different circles in different layers in different sizes."
+    "name": "Bubbles",
+    "description": "This is a variation of the first project in the shape of bubbules, different sizes and colors."
   },
 
 
 
   {
     "file": "experiments/circles3.js",
-    "name": "Circles",
-    "description": "I chose to create an art piece inspired by the artist Tyler Hobbs. The ides a was to create different circles in different layers in different sizes."
+    "name": "Moving Bubbles",
+    "description": "The third project is a moving variation of the bubbles to imitate underwater bubbles."
   }
 ]
 
