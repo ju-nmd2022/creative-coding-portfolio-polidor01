@@ -9,8 +9,8 @@ To add a new project, you need to copy or add the JavaScript file into your expe
 ```json
 {
   "file": "experiments/example.js",
-  "name": "Name of your experiment",
-  "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+  "name": "Circles",
+  "description": "I chose to create an art piece inspired by the artist Tyler Hobbs. The ides a was to create different circles in different layers in different sizes. The other projects was an interpretation of the circles but turned into bubbles giving the effect of being underwater"
 }
 ```
 

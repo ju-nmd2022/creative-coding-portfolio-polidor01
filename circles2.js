@@ -80,7 +80,7 @@ function draw() {
 
 
 
-
+//description": "I chose to create an art piece inspired by the artist Tyler Hobbs. The ides a was to create different circles in different layers in different sizes. //
 
 
 
