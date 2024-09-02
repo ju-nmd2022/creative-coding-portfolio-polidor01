@@ -31,6 +31,11 @@
     "file": "experiments/circles4.js",
     "name": "Circles circles circles",
     "description": "This is a recreation of the flowers. I have changed it to circles in different sizes and colours."
+  },
+  {
+    "file": "experiments/movingCircles.js",
+    "name": "Moving circles",
+    "description": "This is a variation of the circles, I added a random color making them move and change colors. ."
   }
 ]
 
