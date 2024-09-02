@@ -35,7 +35,12 @@
   {
     "file": "experiments/movingCircles.js",
     "name": "Moving circles",
-    "description": "This is a variation of the circles, I added a random color making them move and change colors. ."
+    "description": "This is a variation of the circles, I added a random color making them move and change colors."
+  },
+  {
+    "file": "experiments/circlesAndThorns.js",
+    "name": "Circles and Thorns",
+    "description": "Here i added a rectangle instead of an ellipse giving it a spike effect implementing a thorn effect."
   }
 ]
 
