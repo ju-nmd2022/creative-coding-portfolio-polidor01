@@ -4,7 +4,7 @@ let amount = 20;
 let gap = 100;
 
 function setup () {
-  createCanvas(innerWidth, innerHeight);
+  createCanvas(600, 600);
   background(255, 255,255);
   
   }
