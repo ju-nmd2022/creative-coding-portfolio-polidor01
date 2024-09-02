@@ -25,6 +25,12 @@
     "file": "experiments/circles3.js",
     "name": "Moving Bubbles",
     "description": "The third project is a moving variation of the bubbles to imitate underwater bubbles."
+  },
+
+  {
+    "file": "experiments/circles4.js",
+    "name": "Circles circles circles",
+    "description": "This is a recreation of the flowers. I have changed it to circles in different sizes and colours."
   }
 ]
 
