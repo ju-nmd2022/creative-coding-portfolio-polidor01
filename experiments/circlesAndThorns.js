@@ -29,9 +29,7 @@ function setup () {
             rotate(PI / 6);
         }
     }
-
-    
-  }
+}
 
   function draw () {
     let y = (height - flowerSize * amount - gap * (amount - 1)) / 2;
