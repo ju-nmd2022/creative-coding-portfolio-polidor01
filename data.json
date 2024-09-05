@@ -41,6 +41,16 @@
     "file": "experiments/circlesAndThorns.js",
     "name": "Circles and Thorns",
     "description": "Here i added a rectangle instead of an ellipse giving it a spike effect implementing a thorn effect."
+  },
+  {
+    "file": "experiments/lines.js",
+    "name": "Lines",
+    "description": "This is an inspired Tyler Hobbs art where I used lines with different colors and used the flow field effect."
+  },
+  {
+    "file": "experiments/lines2.js",
+    "name": "More lines",
+    "description": "This version is another variation of the previous art where I also played around with the code changing different numbers and velocity and acceleration creating a whole new image."
   }
 ]
 
