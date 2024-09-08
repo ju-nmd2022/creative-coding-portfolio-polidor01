@@ -1,32 +1,19 @@
 [
   {
-    "file": "experiments/example.js"
-  },
-
-
-
-  {
     "file": "experiments/circles.js",
     "name": "Circles",
     "description": "I chose to create an art piece inspired by the artist Tyler Hobbs. The ides a was to create different circles in different layers in different sizes."
   },
-
-
-
   {
     "file": "experiments/circles2.js",
     "name": "Bubbles",
     "description": "This is a variation of the first project in the shape of bubbules, different sizes and colors."
   },
-
-
-
   {
     "file": "experiments/circles3.js",
     "name": "Moving Bubbles",
     "description": "The third project is a moving variation of the bubbles to imitate underwater bubbles."
   },
-
   {
     "file": "experiments/circles4.js",
     "name": "Circles circles circles",
@@ -51,6 +38,11 @@
     "file": "experiments/lines2.js",
     "name": "More lines",
     "description": "This version is another variation of the previous art where I also played around with the code changing different numbers and velocity and acceleration creating a whole new image."
+  },
+  {
+    "file": "experiments/dots.js",
+    "name": "Dots",
+    "description": "This project is again inspired by Tyler Hobbs. I used my previous example as an inspiration and changed it to create something new. I used Vectors like accelerations, velocity and position to make one of the balls moving up and side and sidweays but also creating different lines when it moves, giving a whole different art piece."
   }
 ]
 
