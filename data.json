@@ -43,6 +43,11 @@
     "file": "experiments/dots.js",
     "name": "Dots",
     "description": "This project is again inspired by Tyler Hobbs. I used my previous example as an inspiration and changed it to create something new. I used Vectors like accelerations, velocity and position to make one of the balls moving up and side and sidweays but also creating different lines when it moves, giving a whole different art piece."
+  },
+  {
+    "file": "experiments/MovingLines.js",
+    "name": "Moving Lines",
+    "description": "Here I played around with sound on my already existing project with the lines. I used the envelope tone."
   }
 ]
 
