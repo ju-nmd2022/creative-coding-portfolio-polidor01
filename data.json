@@ -47,7 +47,7 @@
   {
     "file": "experiments/MovingLines.js",
     "name": "Moving Lines",
-    "description": "Here I played around with sound on my already existing project with the lines. I used the envelope tone."
+    "description": "Lines appear and move by themselves and when they hit the corners they make sound."
   }
 ]
 
