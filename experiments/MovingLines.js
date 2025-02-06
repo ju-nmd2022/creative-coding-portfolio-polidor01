@@ -2,34 +2,21 @@
 function setup() {
     createCanvas (innerWidth, innerHeight);
     background('#fbf8f3');
-    field = new Array(cols * rows);
-    for (let i = 0; i < 50; i++) {
-        particles[i] = new Particle();
-    }
 
     synth = new Tone.PolySynth(Tone.Synth).toDestination();
-    filter = new Tone.Filter(800, "lowpass").toDestination();
-    synth.connect(filter);
 
-    Tone.Offline(() => {
-        const env = new Tone.Envelope({
-            attack: 0.1,
-            decay: 0.2,
-            sustain: 0.5,
-            release: 0.8,
-        }).toDestination();
-        env.triggerAttackRelease(1);
-    }, 1.5, 1);
+
+    Tone.start().then(() => {
+    setInterval(() => {
+    let newLine = new Line();
+    lines.push(newLine);
+    }, 1000); 
+    });
 }
 
-let field;
+
 let synth;
-let filter;
-let particles = [];
-const cols = 10;
-const rows = 10;
-const scale = 6;
-const inc = 0.1; //smoothness
+let lines = [];
 let retroColors = [
     [0, 128, 128,],
     [205, 92, 92,],
@@ -38,36 +25,31 @@ let retroColors = [
     [107, 142, 35,],
 ];
 
-window.addEventListener("click", () => {
-    Tone.start();
-});
 
-class Particle {
+class Line {
     constructor() {
-        this.position = createVector(random(width), random(height / 2, height));
-        this.velocity = createVector(2, 0);
-        this.maxSpeed = 1;
+        this.position = createVector(random(width), random(height));
+        this.velocity = createVector(random(-2, 2), random(-2, 2));
         this.prevPos = this.position.copy();
-        this.strokeWeight = random(2, 2);
         this.color = color(random(retroColors)); 
     }
 
-    follow(vectors) {
-        let x = floor(this.position.x / scale);
-        let y = floor(this.position.y / scale);
-        let index = x + y * cols;
-        let force = vectors[index];
-        this.velocity.add(force);
-    }
-
     update() {
-        this.velocity.limit(this.maxSpeed);
         this.position.add(this.velocity);
+
+       if (this.position.x > width || this.position.x < 0) {
+           this.velocity.x *= -1; 
+           this.playTone();
+        }
+       if (this.position.y > height || this.position.y < 0) {
+           this.velocity.y *= -1; 
+           this.playTone();
+        }
     }
 
     show() {
         stroke(this.color);
-        strokeWeight(this.strokeWeight);
+        strokeWeight(3);
         line(this.position.x, this.position.y, this.prevPos.x, this.prevPos.y);
         this.updatePrev();
     }
@@ -77,45 +59,34 @@ class Particle {
         this.prevPos.y = this.position.y;
     }
 
-    edges() {
-        if (this.position.x > width) {
-            this.position.x = 0;
-            this.updatePrev();
-        }
-        if (this.position.x < 0) {
-            this.position.x = width;
-            this.updatePrev();
-        }
-    }
+    playTone() {
+        let angle = this.velocity.heading();
+         let note;
+     
+         if (angle >= -Math.PI / 4 && angle < Math.PI / 4) {
+             note = "C4";
+         } else if (angle >= Math.PI / 4 && angle < 3 * Math.PI / 4) {
+             note = "D5"; 
+         } else if (angle >= -3 * Math.PI / 4 && angle < -Math.PI / 4) {
+             note = "E4"; 
+         } else {
+             note = "G4";
+         }
+
+         synth.triggerAttackRelease(note, "8n");
+      }
 }
 
 function draw() {
-    for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].show();
-        particles[i].edges();
+    for (let i = 0; i < lines.length; i++) {
+        lines[i].update();
+        lines[i].show();
     }
 }
 
-function mousePressed() {
-    let note = random(["C4", "D5", "E4", "G4", "A5"]);
-    synth.triggerAttackRelease(note, "8n");
+// //some of the code was taken from ChatGPT but changed//
+// //some part of the code for the Tone was taken by the Tone.js webiste: https://tonejs.github.io/docs/15.0.4/classes/Envelope.html//
 
-    filter.frequency.rampTo(1500, 0.5);
+// For this new version and removed the Particles class the added the lines to make it simple
+// and automatic where the lines appear and move by themselves and when they hit the corners they make sound//
 
-    for (let i = 0; i < particles.length; i++) {
-        particles[i].velocity = createVector(2, random(-2, 2));
-        particles[i].maxSpeed = random(1, 2);
-        particles[i].color = color(random(retroColors));
-    }
-}
-
-function mouseReleased() {
-    for (let i = 0; i < particles.length; i++) {
-        particles[i].velocity = createVector(2, 0);
-        particles[i].maxSpeed = 1;
-    }
-}
-
-//some of the code was taken from ChatGPT but changed//
-//some part of the code for the Tone was taken by the Tone.js webiste: https://tonejs.github.io/docs/15.0.4/classes/Envelope.html//
