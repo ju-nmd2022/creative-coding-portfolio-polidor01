@@ -47,7 +47,7 @@
   {
     "file": "experiments/MovingLines.js",
     "name": "Moving Lines",
-    "description": "Lines appear and move by themselves and when they hit the corners they make sound."
+    "description": "Lines appear and move by themselves and when they hit the corners they make different sounds and tones."
   }
 ]
 
